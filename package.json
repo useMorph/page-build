@@ -1,0 +1,15 @@
+{
+  "name": "page-build",
+  "version": "0.3.0-beta.1",
+  "main": "index.js",
+  "repository": "https://github.com/useMorph/page-build.git",
+  "author": "KT83 <keita.mitsuhashi.83@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    ".page-lib/*"
+  ],
+  "scripts": {
+    "build-page": "yarn workspace @usemorph/page-build-script build-page"
+  }
+}
