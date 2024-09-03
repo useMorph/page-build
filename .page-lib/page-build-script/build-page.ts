@@ -23,7 +23,18 @@ program
     await copyFileSync(originalPath, targetPath);
 
     await exec(
-      `yarn workspace @usemorph/page-build-template build --outDir ../../${option.outDir}`
+      `yarn workspace @usemorph/page-build-template build --outDir ../../${option.outDir}`,
+      (error, stdout, stderr) => {
+        if (error) {
+          console.error(`error: ${error.message}`);
+          return;
+        }
+        if (stderr) {
+          console.error(`stderr: ${stderr}`);
+          return;
+        }
+        console.log(`stdout: ${stdout}`);
+      }
     );
   });
 
