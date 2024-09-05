@@ -6,7 +6,8 @@
   "author": "KT83 <keita.mitsuhashi.83@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build-page": "ts-node --transpile-only ./build-page.ts build-page"
+    "build-page": "node ./build-page.js build-page",
+    "build-script": "tsc --skipLibCheck"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "^12.1.0",
