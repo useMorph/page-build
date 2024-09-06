@@ -10,6 +10,6 @@
     ".page-lib/*"
   ],
   "scripts": {
-    "build-page": "yarn workspace @usemorph/page-build-script build-page"
+    "build-page": "npm run build-page --workspace=@usemorph/page-build-script --"
   }
 }
