@@ -22,7 +22,7 @@ program
     .description("Build a page")
     .argument("<file>", ".mdx file to compile")
     .requiredOption("-o, --outDir <outDir>", "Output directory")
-    .option("-p, --preview <preview>", "For preview environment")
+    .option("-p, --preview", "For preview environment")
     .action((file, option) => __awaiter(void 0, void 0, void 0, function* () {
     const originalPath = path_1.default.resolve(path_1.default.join(process.cwd(), "../../", file));
     const targetPath = path_1.default.resolve(path_1.default.join(process.cwd(), "../../", ".page-lib/page-build-template/src/Page.mdx"));

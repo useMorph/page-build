@@ -10,7 +10,7 @@ program
   .description("Build a page")
   .argument("<file>", ".mdx file to compile")
   .requiredOption("-o, --outDir <outDir>", "Output directory")
-  .option("-p, --preview <preview>", "For preview environment")
+  .option("-p, --preview", "For preview environment")
   .action(async (file, option) => {
     const originalPath = path.resolve(path.join(process.cwd(), "../../", file));
     const targetPath = path.resolve(
