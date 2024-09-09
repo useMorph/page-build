@@ -8,7 +8,9 @@ import "@use-morph/page/css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <PageProvider>
+    <PageProvider
+      isPreview={import.meta.env.VITE_IS_PREVIEW === "true" ? true : false}
+    >
       <MDXProvider>
         <Page />
       </MDXProvider>
