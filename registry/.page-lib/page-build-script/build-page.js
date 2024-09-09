@@ -22,11 +22,12 @@ program
     .description("Build a page")
     .argument("<file>", ".mdx file to compile")
     .requiredOption("-o, --outDir <outDir>", "Output directory")
+    .option("-p, --preview <preview>", "For preview environment")
     .action((file, option) => __awaiter(void 0, void 0, void 0, function* () {
     const originalPath = path_1.default.resolve(path_1.default.join(process.cwd(), "../../", file));
     const targetPath = path_1.default.resolve(path_1.default.join(process.cwd(), "../../", ".page-lib/page-build-template/src/Page.mdx"));
     yield (0, fs_1.copyFileSync)(originalPath, targetPath);
-    yield (0, child_process_1.exec)(`yarn workspace @usemorph/page-build-template build --outDir ../../${option.outDir}`, (error, stdout, stderr) => {
+    yield (0, child_process_1.exec)(`yarn workspace @usemorph/page-build-template build --outDir ../../${option.outDir} ${option.preview !== undefined ? "--mode preview" : ""}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`error: ${error.message}`);
             return;
